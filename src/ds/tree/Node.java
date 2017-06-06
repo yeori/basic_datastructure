@@ -25,7 +25,7 @@ import java.util.Comparator;
  *
  * @param <T>
  */
-class Node<T> {
+public class Node<T> {
     T value;
     
     Node<T> parent, left, right;
@@ -37,11 +37,18 @@ class Node<T> {
         this.c = c;
     }
     /**
+     * returns parent node
+     * @return
+     */
+    public Node<T> parent() {
+        return parent;
+    }
+    /**
      * returns left child node
      * 
      * @return left child( may be null )
      */
-    Node<T> left() {
+    public Node<T> left() {
         return left;
     }
     /**
@@ -49,8 +56,15 @@ class Node<T> {
      * 
      * @return right child( may be null )
      */
-    Node<T> right() {
+    public Node<T> right() {
         return right;
+    }
+    /**
+     * return user data in this node
+     * @return
+     */
+    public T value() {
+        return value;
     }
     /**
      * whether it has left child node
@@ -107,6 +121,36 @@ class Node<T> {
          * return 1 + MAX(height_of_left , height_of_right ) if not leaf node
          */
         return 0;
+    }
+    /**
+     * <pre>
+     * depth of this node
+     * (depth of root is 0)
+     * </pre>
+     * @return
+     */
+    public int depth() {
+        /*
+         * TODO not implemented
+         * 
+         * return 0 if root node
+         * return 1 + depth_of_parent if not root node
+         */
+        return 0;
+    }
+    /**
+     * number of all nodes
+     * @return
+     */
+    public int countNode() {
+        /*
+         * TODO count number of nodes recursively 
+         * 
+         * Leaf node returns 1
+         * Non-leaf nodes return 1 + count_left + count_right
+         * 
+         */
+        return -1;
     }
     
     

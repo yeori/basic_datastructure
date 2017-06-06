@@ -51,6 +51,21 @@ public class Bstree<T> {
         return root.height();
     }
     /**
+     * number of nodes
+     * @return
+     */
+    public int countNodes () {
+        if ( root == null) {
+            return 0;
+        }
+        
+        /*
+         * FIXME should implement Node.countNodes()
+         * 
+         */
+        return root.countNode();
+    }
+    /**
      * find the left most node and return user data
      * <pre>
      *           [ROOT]
@@ -59,7 +74,7 @@ public class Bstree<T> {
      *        /
      *      ...
      *     /
-     * [[left most]]
+     * [[LEFT MOST]]
      *           \
      *         [right or null]
      * </pre>  
@@ -78,7 +93,7 @@ public class Bstree<T> {
      *            \
      *            ...
      *              \
-     *            [[right most]]
+     *            [[RIGHT MOST]]
      *             /
      *  [left or null]
      * </pre>  
@@ -95,7 +110,7 @@ public class Bstree<T> {
      * @return true if exists, false if not exists
      */
     public boolean contains ( T data ) {
-        // FIXME use data.equals()
+        // FIXME use node.value().equals ( data ) for each node
         return false;
     }
     /**
@@ -117,7 +132,8 @@ public class Bstree<T> {
      * 
      * find sibling data
      * <pre>
-     * 
+     *   sibling nodes - same parent!
+     *   
      *          [parent]
      *            /  \
      *           /    \
@@ -128,12 +144,69 @@ public class Bstree<T> {
      *  if no sibling node, return null
      *  
      *  if userData does not exist, throw any runtime exception
+     *  
+     *  Root node has no sibling
      * </pre>
      * 
      * @param data
      * @return
      */
-    public T findSibling( T userData ) {
+    public T siblingData( T userData ) {
+        return null;
+    }
+    /**
+     * find tree node containing the given user data, or return null if not exist 
+     * @param userData
+     * @return tree node containing userData
+     */
+    public Node<T> findNode( T userData) {
+        /*
+         * FIXME 
+         */
+        return null;
+    }
+
+    /**
+     * <pre>
+     * find the closest common anscestor of two nodes
+     * (d1 and d2 should exist in this tree)
+     * </pre>
+     * @param d1 data existing in this tree
+     * @param d2 data existing in this tree
+     * @return closest common ancestor node
+     * @throws RuntimeException if either d1 or d2 is null
+     */
+    public Node<T> closestAnscestor ( T d1, T d2) {
+        /*
+         * FIXME three cases
+         * 
+         * 1) both are left side
+         *            node
+         *           /
+         *         ...
+         *       /    \
+         *     dx     ...
+         *             |
+         *             dy
+         *             
+         * 2) both are right side
+         *  
+         *             node
+         *                 \
+         *                 ...
+         *               /    \
+         *             dx     ...
+         *                     dy
+         * 
+         * 3) one is at left, another is at right
+         * 
+         *             node
+         *           /      \
+         *          ...     ...
+         *         /          \
+         *        dx          ...
+         *                     dy
+         */
         return null;
     }
 }
