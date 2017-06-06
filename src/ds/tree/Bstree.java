@@ -23,6 +23,10 @@ public class Bstree<T> {
         comparing = comp;
     }
     
+    public Node<T> root() {
+        return root;
+    }
+    
     /**
      * insert the given user data into this tree
      * @param userData
